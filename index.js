@@ -1,91 +1,101 @@
+$(document).ready(function () {
+  setInterval(myinterval, 1400);
+});
 let score = 0;
-setInterval(myinterval, 1400);
-
 function myinterval() {
-  let image78 = document.createElement('img');
-  image78.setAttribute("src", "rat.png");
-  image78.setAttribute('id', "elementId");
-  image78.setAttribute("onclick", "click12()");
-  
+  var image78 = $('<img id="elementId">');
+  image78.attr('src', "rat.png");
+  image78.attr("onclick", "click12()");
+
+
 
   let random = Math.floor(Math.random() * 9);
   if (random == 0) {
-    document.getElementById("d1").appendChild(image78);
+    image78.appendTo('#d1');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
-    },700);
+
+      $("#d1").empty();
+    }, 700);
   }
   else if (random == 1) {
-    document.getElementById("d2").appendChild(image78);
+    image78.appendTo('#d2');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
+
+      $("#d2").empty();
     }, 700);
   }
   else if (random == 2) {
-    document.getElementById("d3").appendChild(image78);
+    image78.appendTo('#d3');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
-    },700);
+
+      $("#d3").empty();
+    }, 700);
   }
   else if (random == 3) {
-    document.getElementById("d4").appendChild(image78);
+    image78.appendTo('#d4');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
+
+      $("#d4").empty();
     }, 700);
   }
   else if (random == 4) {
-    document.getElementById("d5").appendChild(image78);
+    image78.appendTo('#d5');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
+
+      $("#d5").empty();
     }, 700);
   }
   else if (random == 5) {
-    document.getElementById("d6").appendChild(image78);
+    image78.appendTo('#d6');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
+
+      $("#d6").empty();
     }, 700);
   }
   else if (random == 6) {
-    document.getElementById("d7").appendChild(image78);
+    image78.appendTo('#d7');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
+
+      $("#d7").empty();
     }, 700);
   }
   else if (random == 7) {
-    document.getElementById("d8").appendChild(image78);
+    image78.appendTo('#d8');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
+
+      $("#d8").empty();
     }, 700);
   }
   else {
-    document.getElementById("d9").appendChild(image78);
+    image78.appendTo('#d9');
     setTimeout(function () {
-      image78.parentNode.removeChild(image78);
+
+      $("#d9").empty();
     }, 700);
   }
 
 }
-function click12()
-{
+function click12() {
   score = score + 10;
-  document.getElementById("total-score").innerHTML = score;
-  document.getElementById("para4").innerHTML = `Your Score is ${score}.`;
+  $("#total-score").html(score);
+  $("#para4").html(`Your Score is ${score}.`);
 }
 
 var timeleft = 25;
 var downloadTimer = setInterval(function () {
   if (timeleft <= 0) {
     clearInterval(downloadTimer);
-    document.getElementById("contTime").innerHTML = "Finished";
-    document.getElementById("divId").style.display = "block";
-    document.getElementById("divmain75").style.display = "none";
-   
+   $("#contTime").html("Finished");
+   $("#divId").css("display", "block");
+   $("#divmain75").css("display", "none");
     getCookie(score);
     setCookie(score);
-  } else {
-    document.getElementById("contTime").innerHTML = timeleft + " seconds remaining";
-    document.getElementById('para3').innerHTML = document.cookie;
-    
+  } 
+  else
+   {
+   $("#contTime").html(` ${timeleft} seconds remaining`);
+    $('#para3').html(document.cookie);
+
   }
   timeleft -= 1;
 }, 1000);
@@ -98,20 +108,19 @@ function getCookie(score) {
     highScore = 0;
   }
   if (score > highScore) {
-    document.getElementById("para3").innerHTML=score;
-    document.getElementById("para5").innerHTML = 'Congratulation You made High Score ' + score;
+   $("#para3").html(score);
+   $("#para5").html(`Congratulation You made High Score  ${score}`);
   }
 }
 function setCookie(score) {
   // console.log('heyy');
   var highScore = document.cookie.split("=")[1];
-  if(highScore==undefined)
-  {
-    highScore=0;
+  if (highScore == undefined) {
+    highScore = 0;
   }
-  if(score > highScore){
-  document.cookie= 'highScore=' +score;
-   }
-    console.log(document.cookie);
-    document.getElementById("para3").innerHTML = document.cookie;
+  if (score > highScore) {
+    document.cookie = 'highScore=' + score;
+  }
+  console.log(document.cookie);
+  document.getElementById("para3").innerHTML = document.cookie;
 }
