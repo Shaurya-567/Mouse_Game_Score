@@ -1,0 +1,103 @@
+body{
+  background-image: url(bg.png);
+  background-attachment: fixed;
+background-size: 100% 100%;
+text-align: center;
+}
+.main
+{
+  background: rgba(0,0,0,.9);
+padding: 60px;
+height: 350px;
+text-align: center;
+margin-top: 79px;
+position: relative;
+width: max-content;
+}
+#image1
+{
+  height: inherit;
+width: inherit;
+position: relative;
+animation-name: img12;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+}
+#main3
+{
+  position: absolute;
+font-size: 18px;
+padding: 12px 22px;
+cursor: pointer;
+background: rgb(79, 226, 79);
+border-radius: 10px;
+color: white;
+border: none;
+bottom: 75px;
+left: 240px;
+}
+@keyframes img12
+{
+0%{ top: -20px;}
+50%{
+  top:-100px
+}
+100%{
+  top:10px;
+}
+}
+.main56
+{
+  background-color: black;
+  height: 200px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  padding: 20px 0px ;
+  display: none;
+}
+.main56 p{
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#main7
+{
+  
+  font-size: 18px;
+padding: 12px 22px;
+cursor: pointer;
+background: rgb(79, 226, 79);
+border-radius: 10px;
+color: white;
+border: none;
+}
+.main34
+{
+  margin-bottom: 70px;
+}
+#para5
+{
+  color: red;
+}
+#d1,#d2,#d3,#d4,#d5,#d6,#d7,#d8,#d9
+{
+  height: 150px;
+  width: 150px;
+  border: 20px solid #231e16;
+  display: inline-flex;
+  margin: 20px;
+  border-radius: 24px 310px 51px 334px ;
+  background: #000;
+}
+#elementId
+{
+  height: inherit;
+width: inherit;
+position: relative;
+animation-name: img12;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+cursor: pointer;
+}
